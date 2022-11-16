@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<section >
+<section class="col-xl-6 container-fluid caroulsel" >
+<ngb-carousel
+
+[activeId]="'secondSlide'"
+>
+   <ng-template ngbSlide id="firstSlide">
+     <div class="picsum-img-wrapper">
+       <img src="assets/estilisefoto1.svg" alt="Angular Carousel 1">
+     </div>
+   </ng-template>
+   <ng-template ngbSlide id="secondSlide">
+     <div class="picsum-img-wrapper">
+      <img src="assets/estilisefoto1.svg" alt="Angular Carousel 1">
+     </div>
+   </ng-template>
+ </ngb-carousel>
+</section>
+<section class="img-2 col-xl-6 row">
+  <div id="imagem2" >
+ <img src="assets/estiliseverao.svg" alt="Angular Carousel 1">
+ <img src="assets/estiliseinverno.svg" alt="Angular Carousel 1">
+  </div>
+    <div id="imagem1" >
+    <img src="assets/estiliseoutono.svg" alt="Angular Carousel 1">
+    </div>
+</section>
+</section>
+<div class="icon-page">
+  <div class="icons-page">
+      <img src="assets/logofrete.svg">
+    <div>
+    <strong>FRETE GRÁTIS</strong>
+    <p>Em todos os pedidos Pernanbuco</p>
+    </div>
+  </div>
+  <div class="icons-page">
+    <img src="assets/logotroca.svg">
+    <div>
+      <strong>TROCA OU DEVOLUÇÃO 30 DIAS</strong>
+      <p>Prazo máximo para trocas/devoluções</p>
+    </div>
+  </div>
+  <div class="icons-page">
+    <img src="assets/logoatacado.svg">
+    <div>
+    <strong>SOMENTE ATACADO</strong>
+    <p>A partir de 20 peças somente</p>
+    </div>
+  </div>
+</div>
+<section class="banner1">
+  <img src="assets/banner.svg" alt="">
+</section>
+<section class="banner2">
+  <img src="assets/banner2.svg" alt="">
+</section>
+<app-footer></app-footer>

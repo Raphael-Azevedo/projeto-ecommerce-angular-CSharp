@@ -1,0 +1,125 @@
+.header-footer{
+display: flex;
+height: 75px;
+width: 100%;
+background: #F595A8;
+justify-content: center;
+position: relative;
+padding-left: 0px;
+padding-right: 40px;
+}
+.header-footer h6{
+position: relative;
+width: 514px;
+padding: 25px;
+min-width: 460px;
+font-family: 'Cinzel';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+color: #FFFFFF;
+margin: 0;
+line-height: 30px;
+}
+.header-footer input{
+position: relative;
+box-sizing: border-box;
+display: flex;
+padding: 10px 16px 10px 20px;
+max-width: 291px;
+width: 100%;
+height: 40px;
+margin: 17.5px;
+background:  #FFB1C0;
+border: 2px solid  #FFFFFF ;
+border-radius: 10px;
+}
+.header-footer input::placeholder{
+color: #FFFFFF ;
+}
+.header-footer input:focus{
+outline: 2px solid  #FFFFFF;
+}
+.header-footer button{
+width: 178px;
+height: 40px;
+background-color:  #F595A8;
+color:  #FFFFFF;
+border: 2px solid  #FFFFFF;
+font-family: 'Meticula';
+border-radius: 10px;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+letter-spacing: 0.1em;
+margin: 17.5px;
+margin-right: 50px;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+.header-footer button:hover{
+background-color: #FFB1C0;
+color: white;
+}
+.header-footer img{
+margin: 22px;
+}
+
+.info-footer ul{
+display: flex;
+justify-content: space-evenly;
+margin-top: 70px;
+}
+.info-footer ul li{
+display: inline-block ;
+padding-left: 85px;
+padding-right: 85px;
+}
+.info-footer ul li a{
+display: block ;
+margin-bottom: 25px;
+text-decoration: none;
+color: #00000099;
+font-family: 'Meticula';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 17px;
+letter-spacing: 0.03em;
+height: 17px;
+}
+.footer-img *{
+display: inline;
+}
+.info-footer ul li h3{
+font-family: 'Meticula';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 22px;
+letter-spacing: 0.02em;
+color: #817268;
+}
+.footer-img{
+  margin:45px;
+  display: flex;
+  justify-content: center;
+}
+.footer-img p{
+font-family: 'Meticula';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 15px;
+letter-spacing: 0.03em;
+color: rgba(0, 0, 0, 0.6);
+height: 15px;
+margin-right: 50px;
+margin-left: 50px;
+}
+.footer-img img{
+  padding-left:15px;
+  padding-right: 15px;
+}

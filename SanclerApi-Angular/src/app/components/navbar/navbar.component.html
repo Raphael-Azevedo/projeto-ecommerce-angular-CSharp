@@ -1,0 +1,79 @@
+<nav>
+  <div class="logo">
+    <img src="assets/logo.svg">
+  </div>
+  <div class="header-itens">
+    <ul>
+      <li class="header-item">
+        <a routerLink="/" routerLinkActive="active">Home</a>
+      </li>
+      <li class="header-item">
+        <a routerLink="/produtos" routerLinkActive="active">Produtos</a>
+      </li>
+      <li class="header-item">
+        <a routerLink="/contato" routerLinkActive="active">Contato</a>
+      </li>
+      <li class="header-item">
+        <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
+      </li>
+ </ul>
+  </div>
+
+<div class="search">
+  <input type="text" placeholder="Pesquise...">
+</div>
+
+  <div class="header-icons">
+    <ul>
+      <li class="header-icon">
+            <div ngbDropdown class="d-inline-block">
+              <button class="icon-profile" id="dropdownForm1" ngbDropdownToggle><img src="assets/login.svg"></button>
+              <div ngbDropdownMenu aria-labelledby="dropdownForm1" style="padding: 0px;">
+                <div class="box"><p>Login</p></div>
+                <div class="paragrafo">
+                <p>Faça o login caso você tenha uma conta.</p>
+                </div>
+                <form class="example-container mx-3 py-2" [formGroup]="loginForm" (ngSubmit)="addLogin(loginForm.value)" >
+                  <div *ngIf="token == null; else noComments">
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormEmail1 labels">Email</label>
+                    <input type="email" matInput name="email" formControlName="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" autocomplete="username">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormPassword1 labels">Senha</label>
+                    <input type="password"  matInput name="password" formControlName="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" autocomplete="current-password">
+                  </div>
+                  <div class="form-check">
+                    <mat-checkbox  id="dropdownCheck"></mat-checkbox>
+                    <label class="form-check-label" for="dropdownCheck">
+                       Lembrar me
+                    </label>
+                  </div>
+                  <br/>
+                  <div class="btn">
+                  <button type="submit" class="btn-login">Entrar</button>
+                  </div>
+                </div>
+                <ng-template #noComments>
+                  <a mat-list-item routerLink="/adm" routerLinkActive="active">
+                  <button type="submit" class="btn-adm">Area administrativa</button>
+                  </a>
+                  <br>
+                  <br>
+                  <a mat-list-item routerLink="/logout" routerLinkActive="active">Logout</a>
+                </ng-template>
+                </form>
+                <div class="dropdown-divider"></div>
+                <button type="button" ngbDropdownItem>Cadastre-se</button>
+                <button type="button" ngbDropdownItem>Esqueceu a senha??</button>
+              </div>
+            </div>
+      </li>
+      <li class="header-icon">
+        <img src="assets/compras.svg">
+      </li>
+    </ul>
+  </div>
+</nav>
+
+

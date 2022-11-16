@@ -1,0 +1,14 @@
+  <ul>
+  <li *ngFor="let product of dataSource">
+    <mat-card class="example-card">
+      <mat-card-title>{{product.product.title}}</mat-card-title>
+      <mat-card-content>
+        <p>{{product.product.descriptions}}.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Curtir</button>
+        <button mat-button routerLink="/produto/detail/{{product.product.id}}">Detalhes</button>
+      </mat-card-actions>
+    </mat-card>
+  </li>
+</ul>

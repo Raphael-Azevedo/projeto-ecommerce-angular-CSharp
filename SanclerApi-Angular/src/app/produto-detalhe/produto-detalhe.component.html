@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+<h1 class="title">{{title}}</h1>
+<body>
+<div class="img-product">
+  <img src="./assets/fotoprodutoteste.svg" alt="produto">
+</div>
+<div class="side-menu">
+  <div>
+    <p>
+      TAMANHO DISPONÍVEL: {{size}}
+    </p>
+    <mat-radio-group aria-label="Select an option" >
+      <mat-radio-button class="radio" value="1">PP</mat-radio-button>
+      <mat-radio-button class="radio" value="2">P</mat-radio-button>
+      <mat-radio-button class="radio" value="3">M</mat-radio-button>
+      <mat-radio-button class="radio" value="4">G</mat-radio-button>
+      <mat-radio-button class="radio" value="5">GG</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <hr>
+  <div>
+    <strong>{{price | currency : 'BRL'}} </strong>
+    <button class="cart-btn">ADD CARRINHO</button>
+    <img src="./assets/favorite.svg" alt="">
+  </div>
+  <hr>
+  <div class="icons">
+    <img src="./assets/pixlogo" alt="">
+    <img src="./assets/mastercardlogo.svg" alt="">
+    <img src="./assets/visalogo.svg" alt="">
+    <img src="./assets/elo.svg" alt="">
+    <img src="./assets/hipercardlogo.svg" alt="">
+  </div>
+  <hr>
+  <div>
+    <p>DESCRIÇÃO:</p>
+    <p>{{descriptions}}</p>
+  </div>
+  <hr>
+  <div>
+    <p>AVALIAÇÕES</p>
+    <div class="comments">
+      <h3>Comentários ({{moments.length > 0 ? moments.length : 0}})</h3>
+      <div *ngIf="moments.length > 0; else noComments">
+        <div class="comment-container" *ngFor="let comment of moments">
+          <p class="comment">{{comment.comments.comment}}</p>
+          <p class="author"><span>por:</span> {{comment.comments.username}}</p>
+        </div>
+      </div>
+      <ng-template #noComments>
+        <p>Não há comentários</p>
+      </ng-template>
+      <div class="comment-form">
+        <h3>Deixe um comentário:</h3>
+        <form [formGroup]="commentForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
+          <div class="form-group">
+            <label for="text">Comentário:</label>
+            <textarea formControlName="text" placeholder="O que você quer comentar?" required></textarea>
+            <div class="validation-error" *ngIf="text.invalid && formDir.submitted">
+              <p *ngIf="text.errors?.['required']">O texto é obrigatório.</p>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="username">Nome:</label>
+            <input formControlName="username" type="text" placeholder="Digite o seu nome" required>
+            <div class="validation-error" *ngIf="username.invalid && formDir.submitted">
+              <p *ngIf="username.errors?.['required']">O nome é obrigatório.</p>
+          </div>
+        </div>
+        <br>
+          <input class="cart-btn" type="submit" value="Comentar">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<app-footer></app-footer>

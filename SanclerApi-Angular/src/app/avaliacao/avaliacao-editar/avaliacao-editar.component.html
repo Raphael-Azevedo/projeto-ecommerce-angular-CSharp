@@ -1,0 +1,20 @@
+<app-menu></app-menu>
+<br>
+<br>
+<div>
+  <h3>Editar Avaliação</h3>
+</div>
+<form class="example-container" [formGroup]="avaliacaoForm" (ngSubmit)="updateAvaliacao(avaliacaoForm.value)">
+  <mat-form-field>
+    <input matInput name="evaluation" placeholder="Avaliação" formControlName="evaluation">
+  </mat-form-field>
+  <br>
+  <div class="btn">
+  <button type="submit" [disabled]="!avaliacaoForm.valid" mat-raised-button color="primary"  >Editar</button>
+</div>
+</form>
+<br>
+<br>
+<div class="btn">
+<button mat-raised-button color="primary" routerLink="/adm/produtos" routerLinkActive="active">Voltar a lista</button>
+</div>

@@ -1,0 +1,22 @@
+<app-menu></app-menu>
+<br>
+<br>
+
+<div>
+  <h3>Adicionar Novo Comentário</h3>
+</div>
+<form class="example-container" [formGroup]="commentForm" (ngSubmit)="addComentario(commentForm.value)">
+  <mat-form-field>
+    <input matInput name="comment" placeholder="Comentário" formControlName="comment">
+  </mat-form-field>
+  <br>
+   <br>
+   <div class="btn">
+  <button type="submit" [disabled]="!commentForm.valid" mat-raised-button color="primary" >Adicionar</button>
+</div>
+</form>
+<br>
+<br>
+<div class="btn">
+<button mat-raised-button color="primary" routerLink="/adm/produtos" routerLinkActive="active">Voltar a lista</button>
+</div>

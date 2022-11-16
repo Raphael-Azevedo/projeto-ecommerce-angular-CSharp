@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<br>
+<div class="head">
+<button mat-raised-button color="primary" routerLink="/adm/novoinventario" routerLinkActive="active">Criar novo Estoque</button>
+<br>
+<br>
+
+<button mat-raised-button color="primary" routerLink="/adm/produtos" routerLinkActive="active">Voltar a lista</button>
+<br>
+<br>
+
+<div >
+  <h3>Lista de Estoque</h3>
+</div>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="product">
+    <th mat-header-cell *matHeaderCellDef> Nome do Produto </th>
+    <td mat-cell *matCellDef="let element"> {{element.inventory.product.title}} </td>
+  </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="size">
+      <th mat-header-cell *matHeaderCellDef> Tamanho </th>
+      <td mat-cell *matCellDef="let element"> {{element.inventory.size}} </td>
+    </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="amount">
+    <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+    <td mat-cell *matCellDef="let element"> {{element.inventory.amount}} </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="acao">
+    <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"> <button mat-flat-button color="primary" routerLink="/inventario/{{element.inventory.id}}" selected>Editar</button><button mat-flat-button color="warn" (click)="deleteEstoque(element.inventory.id)" >Deletar</button></td>
+    </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

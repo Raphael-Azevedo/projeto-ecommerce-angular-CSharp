@@ -1,0 +1,15 @@
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+section{
+  margin-top: 70px;
+  bottom: 0;
+}
+
+body{
+  bottom: 0;
+  margin: 0;
+  height: auto;
+}

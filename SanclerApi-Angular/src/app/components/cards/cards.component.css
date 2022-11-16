@@ -1,0 +1,18 @@
+.example-card {
+  max-width: 400px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 45px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+li{
+  list-style: none;
+  max-width: 400px;
+margin: 25px;
+display: inline-block;
+}

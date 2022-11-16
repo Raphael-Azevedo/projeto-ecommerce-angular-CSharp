@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<body>
+
+  <div>
+    <h3>Deseja mesmo sair?</h3>
+  </div>
+  <div>
+  <form class="example-container" [formGroup]="logoutForm" (ngSubmit)="addLogout()">
+  <br>
+  <button type="submit" mat-flat-button color="warn" >Fazer Logout</button>
+  </form>
+</div>
+</body>
+<app-footer></app-footer>

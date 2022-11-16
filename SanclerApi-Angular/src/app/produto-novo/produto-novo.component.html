@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<br>
+<br>
+
+<div>
+  <h3>Adicionar Novo Produto</h3>
+</div>
+<form class="example-container" [formGroup]="produtoForm" (ngSubmit)="addProduto(produtoForm.value)">
+  <mat-form-field>
+    <input matInput name="title" placeholder="Nome da Produto" formControlName="title">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="descriptions" placeholder="Descrição do produto" formControlName="descriptions">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="sku" placeholder="sku do produto" formControlName="sku">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input	type="number"  matInput name="price" placeholder="Preço do produto" formControlName="price">
+  </mat-form-field>
+  <br>
+   <br>
+   <div class="btn">
+  <button type="submit" [disabled]="!produtoForm.valid" mat-raised-button color="primary" >Adicionar</button>
+</div>
+</form>
+<br>
+<br>
+<div class="btn">
+<button mat-raised-button color="primary" routerLink="/adm/produtos" routerLinkActive="active">Voltar a lista</button>
+</div>

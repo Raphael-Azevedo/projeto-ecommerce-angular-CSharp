@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<br>
+<div class="head">
+<button mat-raised-button color="primary" routerLink="/adm/novoproduto" routerLinkActive="active">Criar novo produto</button>
+<br>
+<br>
+
+<div >
+  <h3>Lista de Produtos</h3>
+</div>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let element"> {{element.product.title}} </td>
+  </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="sku">
+      <th mat-header-cell *matHeaderCellDef> SKU </th>
+      <td mat-cell *matCellDef="let element"> {{element.product.sku}} </td>
+    </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="imagem">
+    <th mat-header-cell *matHeaderCellDef> Descrição </th>
+    <td mat-cell *matCellDef="let element"> {{element.product.descriptions}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Preço </th>
+    <td mat-cell *matCellDef="let element"> R$ {{element.product.price}} </td>
+  </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="acao">
+    <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"> <button mat-flat-button color="primary" routerLink="/produto/{{element.product.id}}" selected>Editar</button><button mat-flat-button color="accent" routerLink="/adm/comentario/{{element.product.id}}" selected>Comentários</button><button mat-flat-button color="accent" routerLink="/adm/inventario/{{element.product.id}}" selected>Estoque</button><button mat-flat-button color="accent" routerLink="/adm/avaliacao/{{element.product.id}}" selected>Avaliações</button><button mat-flat-button color="warn" (click)="deleteProduto(element.product.id)" >Deletar</button></td>
+    </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<body id="bd-contato">
+
+<div id="site">
+	<div id="conteudo" class="grupo">
+		<section id="conteudo-principal">
+
+			<h1>Contato</h1>
+
+			<p>
+				Entre em contato conosco preenchendo o formulário abaixo:
+			</p>
+
+			<form action="#" method="">
+				<fieldset>
+
+					<fieldset class="grupo">
+						<div class="campo nome">
+							<label for="nome">Nome <abbr title="preenchimento obrigatório">*</abbr></label>
+							<input type="text" name="nome" id="nome" maxlength="100">
+						</div>
+
+						<div class="campo empresa">
+							<label for="empresa">Empresa</label>
+							<input type="text" name="empresa" id="empresa" maxlength="100">
+						</div>
+					</fieldset>
+
+					<div class="campo">
+						<label for="email">E-mail <abbr title="preenchimento obrigatório">*</abbr></label>
+						<input type="text" name="email" id="email" maxlength="100">
+					</div>
+
+					<fieldset class="grupo">
+						<div class="campo telefone">
+							<label for="telefone">Telefone <abbr title="preenchimento obrigatório">*</abbr></label>
+							<input type="text" name="telefone" id="telefone" maxlength="20">
+						</div>
+
+						<div class="campo">
+							<label>Departamento</label>
+							<label class="checkbox">
+								<input type="radio" name="departamento"> Comercial
+							</label>
+							<label class="checkbox">
+								<input type="radio" name="departamento"> Financeiro
+							</label>
+							<label class="checkbox">
+								<input type="radio" name="departamento"> Suporte
+							</label>
+						</div>
+					</fieldset>
+
+					<div class="campo">
+						<label for="assunto">Assunto <abbr title="preenchimento obrigatório">*</abbr></label>
+						<select id="assunto" name="assunto">
+							<option>-- Selecione --</option>
+							<option>Orçamento</option>
+							<option>Dúvidas</option>
+							<option>Solicitações</option>
+							<option>Reclamações</option>
+							<option>Outro</option>
+						</select>
+					</div>
+
+					<div class="campo">
+						<label for="mensagem">Mensagem <abbr title="preenchimento obrigatório">*</abbr></label>
+						<textarea id="mensagem" name="mensagem"></textarea>
+					</div>
+
+					<div class="campo">
+						<label class="checkbox">
+							<input type="checkbox" name="newsletter"> Gostaria de receber a Newsletter da Empresa
+						</label>
+					</div>
+
+					<input type="submit" name="submit" class="submit" value="Enviar Mensagem">
+
+				</fieldset>
+			</form>
+
+		</section>
+	</div>
+</div>
+
+</body>
+
+<app-footer></app-footer>

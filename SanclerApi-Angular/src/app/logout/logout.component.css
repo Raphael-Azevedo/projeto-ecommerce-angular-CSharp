@@ -1,0 +1,6 @@
+body{
+  max-height: 400px;
+  margin-top: 50px;
+  display: flexbox;
+  margin-left: 300px;
+}

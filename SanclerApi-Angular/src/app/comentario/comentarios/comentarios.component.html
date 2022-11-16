@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<br>
+<div class="head">
+<button mat-raised-button color="primary" routerLink="/adm/novocomentario" routerLinkActive="active">Criar novo Comentário</button>
+<br>
+<br>
+
+<button mat-raised-button color="primary" routerLink="/adm/produtos" routerLinkActive="active">Voltar a lista</button>
+<br>
+<br>
+
+<div >
+  <h3>Lista de Comentários</h3>
+</div>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="product">
+    <th mat-header-cell *matHeaderCellDef> Nome do Produto </th>
+    <td mat-cell *matCellDef="let element"> {{element.comments.product.title}} </td>
+  </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="userId">
+      <th mat-header-cell *matHeaderCellDef> Usuário </th>
+      <td mat-cell *matCellDef="let element"> {{element.comments.email}} </td>
+    </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="comment">
+    <th mat-header-cell *matHeaderCellDef> Comentário </th>
+    <td mat-cell *matCellDef="let element"> {{element.comments.comment}} </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="acao">
+    <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"> <button mat-flat-button color="primary" routerLink="/comentario/{{element.comments.id}}" selected>Editar</button><button mat-flat-button color="warn" (click)="deleteComentario(element.comments.id)" >Deletar</button></td>
+    </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
